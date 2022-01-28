@@ -17,5 +17,5 @@ This algorithm is based off of the Sieve of Eratosthenes. This algorithm works b
 
 A key thing about composite numbers is that they are guaranteed to have a factor less than or equal to their square root. This algorithm utilizes this property by first finding all the primes less than or equal to the square root of *n*. Using these primes, we can find their multiples across the range from square root of *n* to *n*. Since all the composite numbers here are guaranteed to have a multiple within these values, all of the composites will be marked off, leaving just the primes.
 
-## Efficiency
+### Efficiency
 The above alogrithm is not a very quick process: for large numbers, the range between them and their square roots can be several thousands time the size of the range between 2 and the square root. In order to make this faster, this program splits up the range between the square root of *n* and *n* into 8 equal sections, and then uses 8 threads, each one being assigned a range to find primes in.
